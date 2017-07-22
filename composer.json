@@ -1,0 +1,13 @@
+{
+    "name": "ihomehands/geek-uni_php-2",
+    "require-dev": {
+        "phpunit/phpunit": "^6.2"
+    },
+    "authors": [
+        {
+            "name": "Sergey Fedorov",
+            "email": "d946@mail.ru"
+        }
+    ],
+    "require": {}
+}
