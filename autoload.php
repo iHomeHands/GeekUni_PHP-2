@@ -4,9 +4,11 @@ function __autoload($className)
 {
     $dirs = [
         'controller',
+        'data/migrate',
         'lib',
+        'lib/smarty',
         'lib/commands',
-        'model',
+        'model'
     ];
     $found = false;
     foreach ($dirs as $dir) {
