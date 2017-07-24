@@ -14,7 +14,22 @@ class App
 
     protected static function web($url)
     {
-        echo $url;
+        if (isset($_GET['page'])) {
+            $controllerName = $_GET['page'] . 'Controller';
+            $methodName = isset($_GET['action']) ? $_GET['action'] : 'index';
+            $controller = new $controllerName();
+            $data = $controller->$methodName($_REQUEST);
+
+            $view = $controller->view . '/' . $methodName . '.html';
+
+            require_once (Config::get('path_libs') . '/smarty/Autoloader.php');
+            Smarty_Autoloader::register();
+            $smarty = new Smarty();
+            $smarty->setTemplateDir(Config::get('path_templates'));
+            $smarty->assign('title', $controller->title);
+            $smarty->assign('data', $data);
+            echo $smarty->fetch($view);
+        }
     }
 
 
