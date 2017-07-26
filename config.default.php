@@ -1,9 +1,10 @@
 <?php
-$config['db_user'] = 'root';
-$config['db_password'] = '';
-$config['db_base'] = 'shop';
-$config['db_host'] = 'localhost';
+$config['db_user'] = isset($_ENV['IM_DB_USER'])?$_ENV['IM_DB_USER']:'root';
+$config['db_password'] = isset($_ENV['IM_DB_PASS'])?$_ENV['IM_DB_PASS']:'';
+$config['db_base'] = isset($_ENV['IM_DB_BASE'])?$_ENV['IM_DB_BASE']:'shop';
+$config['db_host'] = isset($_ENV['IM_DB_HOST'])?$_ENV['IM_DB_HOST']:'localhost';
 $config['db_charset'] = 'UTF-8';
+$config['server_url'] = isset($_ENV['IM_SERVER_URL'])?$_ENV['IM_SERVER_URL']:'localhost';
 
 $config['path_root'] = __DIR__;
 $config['path_public'] = $config['path_root'] . '/public';
