@@ -1,0 +1,29 @@
+{
+  "name": "geekuni_php-2",
+  "version": "1.0.0",
+  "description": "При развертывание на сервере:",
+  "main": "gulp.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iHomeHands/GeekUni_PHP-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iHomeHands/GeekUni_PHP-2/issues"
+  },
+  "homepage": "https://github.com/iHomeHands/GeekUni_PHP-2#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-ftp": "^1.1.0",
+    "gulp-util": "^3.0.8",
+    "vinyl-ftp": "^0.6.0"
+  }
+}
