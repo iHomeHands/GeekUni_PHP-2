@@ -8,7 +8,7 @@ class App
         db::getInstance()->Connect(Config::get('db_user'), Config::get('db_password'), Config::get('db_base'));
 
         if (php_sapi_name() !== 'cli' && isset($_SERVER) && isset($_GET)) {
-            self::web(isset($_GET['query_string']) ? $_GET['query_string'] : '');
+            self::web(isset($_SERVER['QUERY_STRING']) ?'': $_SERVER['REQUEST_URI']);
         }
     }
 
@@ -32,7 +32,9 @@ class App
         if (isset($_GET['page'])) {
             $controllerName = $_GET['page'] . 'Controller';
             $methodName = isset($_GET['action']) ? $_GET['action'] : 'index';
+            echo "Done $controllerName";
             $controller = new $controllerName();
+            echo "NDone";
             $data = $controller->$methodName($_REQUEST);
 
             $view = $controller->view . '/' . $methodName . '.html';
@@ -50,6 +52,5 @@ class App
             }
         }
     }
-
 
 }
