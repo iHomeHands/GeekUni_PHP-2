@@ -3,7 +3,10 @@ class AdminController extends Controller
 {
     
     protected $controls = [
-        'pages'
+        'pages' => 'Page',
+        'orders' => 'Order',
+        'categories' => 'Category',
+        'goods' => 'Good'
     ];
 
     public $title = 'admin';
@@ -60,14 +63,14 @@ class AdminController extends Controller
                 db::getInstance()->Query($query, ['id' => $actionId['id']]);
                 break;
             case 'delete':
-                db::getInstance()->Query('DELETE FROM ' . $data['id'] . ' WHERE id = :id', ['id' => $actionId['id']]);
+                db::getInstance()->Query('UPDATE ' . $data['id'] . ' SET status=:status WHERE id = :id', ['id' => $actionId['id'], 'status' => Status::Deleted]);
                 break;
         }
         $fields = db::getInstance()->Select('desc ' . $data['id']);
         $_items = db::getInstance()->Select('select * from ' . $data['id']);
         $items = [];
         foreach ($_items as $item) {
-            $items[] = new Page($item);
+            $items[] = new $this->controls[$data['id']]($item);
         }
 
         return ['fields' => $fields, 'items' => $items];
