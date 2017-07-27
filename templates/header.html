@@ -3,5 +3,16 @@
     <head>
         <title>{$title}</title>
     </head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/category.js"></script>
     <body>
+        <ul>
+            {foreach from=$categories item=$category}
+            <li>
+                <a href="/index.php?page=categories&id={$category.id}" link="{$category.id}" class="category-link">{$category.name}</a>
+            </li>
+            {/foreach}
+        </ul>
+
+
 

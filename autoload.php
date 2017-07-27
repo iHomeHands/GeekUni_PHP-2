@@ -8,12 +8,13 @@ function __autoload($className)
         'lib',
         'lib/smarty',
         'lib/commands',
-        'model'
+        'model/'
     ];
     $found = false;
     foreach ($dirs as $dir) {
         $fileName = __DIR__ . '/' . $dir . '/' . $className . '.class.php';
         if (is_file($fileName)) {
+
             require_once($fileName);
             $found = true;
         }
@@ -23,3 +24,7 @@ function __autoload($className)
     }
     return true;
 }
+
+__autoload('Status');
+__autoload('OrderStatus');
+__autoload('CategoriesController');
