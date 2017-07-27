@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS cart;
 CREATE TABLE `cart` (
 `id` int UNSIGNED AUTO_INCREMENT,
 `created_at` datetime,
