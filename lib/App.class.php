@@ -1,8 +1,8 @@
 <?php
 
-class App 
+class App
 {
-    public static function Init() 
+    public static function Init()
     {
         date_default_timezone_set('Europe/Moscow');
         db::getInstance()->Connect(Config::get('db_user'), Config::get('db_password'), Config::get('db_base'));
@@ -28,7 +28,7 @@ class App
                 }
             }
         }
-
+        $_GET['page'] = isset($_GET['page']) ? $_GET['page'] : 'index';
         if (isset($_GET['page'])) {
             $controllerName = $_GET['page'] . 'Controller';
             $methodName = isset($_GET['action']) ? $_GET['action'] : 'index';
