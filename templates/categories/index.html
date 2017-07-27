@@ -1,0 +1,9 @@
+{include file='../header.html'}
+<div id="catalog-data">
+    <ul>
+        {foreach from=$subcategories item=$subcategory}
+        <li><a href="/index.php?page=categories&id={$subcategory.id}">{$subcategory.name}</li>
+        {/foreach}
+    </ul>
+</div>
+{include file='../footer.html'}
