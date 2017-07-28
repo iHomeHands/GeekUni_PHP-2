@@ -1,12 +1,12 @@
-Options +FollowSymlinks
+#Options +FollowSymlinks
 
-RewriteEngine on
+#RewriteEngine on
 
-RewriteBase /public/
+#RewriteBase /public/
 
-RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-f
 
-RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^(.*)$ index.php [L,QSA]
+#RewriteRule ^(.*)$ index.php [L,QSA]
 
