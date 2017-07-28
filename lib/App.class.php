@@ -32,9 +32,7 @@ class App
         if (isset($_GET['page'])) {
             $controllerName = $_GET['page'] . 'Controller';
             $methodName = isset($_GET['action']) ? $_GET['action'] : 'index';
-            echo "Done $controllerName";
             $controller = new $controllerName();
-            echo "NDone";
             $data = $controller->$methodName($_REQUEST);
 
             $view = $controller->view . '/' . $methodName . '.html';
