@@ -1,0 +1,4 @@
+Задание из методички( github) ветка lesson3
+ https://github.com/iHomeHands/GeekUni_PHP-2
+сайт
+ http://php-2.ihomehands.ru/
