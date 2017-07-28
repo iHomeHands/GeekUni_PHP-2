@@ -8,7 +8,7 @@ class App
         db::getInstance()->Connect(Config::get('db_user'), Config::get('db_password'), Config::get('db_base'));
 
         if (php_sapi_name() !== 'cli' && isset($_SERVER) && isset($_GET)) {
-            self::web(isset($_SERVER['QUERY_STRING']) ?'': $_SERVER['REQUEST_URI']);
+            self::web(($_SERVER['QUERY_STRING']==='') ? $_SERVER['REQUEST_URI']: '' );
         }
     }
 
