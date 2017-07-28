@@ -16,7 +16,7 @@ class App
     {
         $url = explode('/', $url);
         if (isset($url[1])) {
-            $_GET['page'] = $url[1];
+            $_GET['page'] = ($url[1]===''?'index':$url[1]);
             if (isset($url[2])) {
                 if (is_numeric($url[2])) {
                     $_GET['id'] = $url[2];
@@ -28,7 +28,6 @@ class App
                 }
             }
         }
-        $_GET['page'] = isset($_GET['page']) ? $_GET['page'] : 'index';
         if (isset($_GET['page'])) {
             $controllerName = $_GET['page'] . 'Controller';
             $methodName = isset($_GET['action']) ? $_GET['action'] : 'index';

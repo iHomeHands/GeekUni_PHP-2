@@ -4,6 +4,8 @@ class CategoriesController extends Controller
 
     public $view = 'categories';
 
+    public $title = 'categories';
+
     public function index($data)
     {
         $categories = self::getCategories(isset($data['id']) ? $data['id'] : 0);
