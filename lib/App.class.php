@@ -12,10 +12,23 @@ class App
         }
     }
 
+    public static function api($url)
+    {
+        $_REQUEST['asAjax'] = $_GET['asAjax'] = true;
+        $_REQUEST['fromApi'] = true;
+        self::web($url);
+    }
+
+
     protected static function web($url)
     {
+        $originalUrl = $url;
         $url = explode('/', $url);
         if (isset($url[1])) {
+            if ($url[1] == 'api') {
+                self::api(str_replace('/api', '', $originalUrl));
+                exit;
+            }
             $_GET['page'] = ($url[1]===''?'index':$url[1]);
             if (isset($url[2])) {
                 if (is_numeric($url[2])) {
@@ -49,5 +62,6 @@ class App
             }
         }
     }
+
 
 }
