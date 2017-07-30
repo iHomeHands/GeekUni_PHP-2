@@ -31,4 +31,3 @@ class CategoriesController extends Controller
             ['status' => Status::Active, 'category' => $categoryId]);
     }
 }
-?>
