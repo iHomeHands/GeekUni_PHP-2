@@ -1,6 +1,7 @@
 <?php
 
-class Order extends Model {
+class Order extends Model
+{
     protected static $table = 'orders';
 
     protected static function setProperties()

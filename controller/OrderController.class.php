@@ -9,7 +9,7 @@ class OrderController extends Controller
     public function index($data)
     {
         $response = [];
-        if (isset ($_COOKIE['user_session'])) {
+        if (isset($_COOKIE['user_session'])) {
             $session = $_COOKIE['user_session'];
             $response['order'] = db::getInstance()->Select(
                 'SELECT * FROM orders WHERE user_session =:session AND status=:status',
@@ -79,7 +79,7 @@ class OrderController extends Controller
             'SELECT * FROM orders WHERE user_session=:user_session AND status=:status',
             ['status' => OrderStatus::Active, 'user_session' => $_COOKIE['user_session']]
         );
-        if(count($order) === 0) {
+        if (count($order) === 0) {
             return $this->createOrder();
         }
         
@@ -88,7 +88,7 @@ class OrderController extends Controller
     
     protected function createOrder()
     {
-        $session = md5(rand(0,999)*time()+rand(1,10000));
+        $session = md5(rand(0, 999)*time()+rand(1, 10000));
         db::getInstance()->Query('INSERT INTO orders (`user_session`, status) VALUES (:user_session, :status)', ['user_session' => $session, 'status' => OrderStatus::Active]);
         setcookie('user_session', $session, time()+86400);
         return db::getInstance()->getLastId();

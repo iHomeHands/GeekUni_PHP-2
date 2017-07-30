@@ -26,10 +26,18 @@ class DB
     /*
      * Запрещаем копировать объект
      */
-    private function __construct() {}
-    private function __sleep() {}
-    private function __wakeup() {}
-    private function __clone() {}
+    private function __construct()
+    {
+    }
+    private function __sleep()
+    {
+    }
+    private function __wakeup()
+    {
+    }
+    private function __clone()
+    {
+    }
 
     /*
      * Выполняем соединение с базой данных
@@ -38,7 +46,10 @@ class DB
     {
         // Формируем строку соединения с сервером
         $connectString = 'mysql:host=' . $host . ';port= ' . $port . ';dbname=' . $base . ';charset=UTF8;';
-        $this->db = new PDO($connectString, $user, $password,
+        $this->db = new PDO(
+            $connectString,
+            $user,
+            $password,
             [
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, // возвращать ассоциативные массивы
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION // возвращать Exception в случае ошибки
@@ -68,4 +79,3 @@ class DB
         }
     }
 }
-?>

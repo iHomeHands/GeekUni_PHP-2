@@ -2,10 +2,10 @@
 
 class Controller
 {
-
     public $view = 'admin';
 
-    public function index($data) {
+    public function index($data)
+    {
         return [];
     }
 }

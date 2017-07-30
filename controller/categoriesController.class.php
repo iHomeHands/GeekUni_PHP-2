@@ -1,7 +1,6 @@
 <?php
 class CategoriesController extends Controller
 {
-
     public $view = 'categories';
 
     public $title = 'categories';
@@ -20,14 +19,15 @@ class CategoriesController extends Controller
     {
         return db::getInstance()->Select(
             'SELECT id, name FROM categories WHERE status=:status AND parent_id = :parent_id',
-            ['status' => Status::Active, 'parent_id' => $parentId]);
-
+            ['status' => Status::Active, 'parent_id' => $parentId]
+        );
     }
 
     protected function getGoods($categoryId)
     {
         return db::getInstance()->Select(
             'SELECT id, name, price FROM goods WHERE category = :category AND status=:status',
-            ['status' => Status::Active, 'category' => $categoryId]);
+            ['status' => Status::Active, 'category' => $categoryId]
+        );
     }
 }

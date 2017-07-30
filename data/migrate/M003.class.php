@@ -11,4 +11,3 @@ class M003 implements IMigration
         db::getInstance()->Query('ALTER TABLE orders ADD COLUMN `user_session` varchar(64)');
     }
 }
-?>

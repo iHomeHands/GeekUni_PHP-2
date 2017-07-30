@@ -11,4 +11,3 @@ class M002 implements IMigration
         db::getInstance()->Query('UPDATE pages SET status=:status', [ 'status' => Status::Active]);
     }
 }
-?>
