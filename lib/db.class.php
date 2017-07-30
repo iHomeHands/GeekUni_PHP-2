@@ -16,6 +16,13 @@ class DB
         return self::$_instance;
     }
 
+    protected $lastInsertId = 0;
+
+    public function getLastId()
+    {
+        return $this->lastInsertId;
+    }
+
     /*
      * Запрещаем копировать объект
      */
@@ -46,6 +53,7 @@ class DB
     {
         $res = $this->db->prepare($query);
         $res->execute($params);
+        $this->lastInsertId = $this->db->lastInsertId();
         return $res;
     }
 
