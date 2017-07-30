@@ -2,6 +2,19 @@ var gulp = require( 'gulp' );
 var gutil = require( 'gulp-util' );
 var ftp = require( 'vinyl-ftp' );
 var config = require('./config.json');
+var phpcs = require('gulp-phpcs');
+
+gulp.task('default', function () {
+    return gulp.src(['/**/*.php', '!/vendor/**/*.*'])
+        // Validate files using PHP Code Sniffer
+        .pipe(phpcs({
+            bin: '/vendor/bin/php-cs-fixer',
+            standard: 'PSR2',
+            warningSeverity: 0
+        }))
+        // Log all problems that was found
+        .pipe(phpcs.reporter('./log'));
+});
 
 gulp.task( 'deploy', function () {
 
