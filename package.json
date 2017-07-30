@@ -25,6 +25,7 @@
     "gulp-ftp": "^1.1.0",
     "gulp-phpcs": "^2.0.0",
     "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
     "vinyl-ftp": "^0.6.0"
   }
 }
