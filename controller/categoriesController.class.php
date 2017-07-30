@@ -8,6 +8,9 @@ class CategoriesController extends Controller
 
     public function index($data)
     {
+        if (isset($data['fromApi'])) {
+            return ['categories' => db::getInstance()->Select('SELECT name, id FROM categories WHERE status=:status', ['status' => Status::Active])];
+        }
         $categories = self::getCategories(isset($data['id']) ? $data['id'] : 0);
         $goods = self::getGoods(isset($data['id']) ? $data['id'] : 0);
         return ['subcategories' => $categories, 'goods' => $goods];
