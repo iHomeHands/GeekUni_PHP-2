@@ -11,3 +11,7 @@ export IM_DB_BASE=shop
 export IM_DB_HOST=localhost
 
 export IM_SERVER_URL=localhost
+
+.\vendor\bin\php-cs-fixer fix --rules=@PSR2 .\
+
+gulp deploy
