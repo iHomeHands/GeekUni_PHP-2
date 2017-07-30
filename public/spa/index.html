@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{$title}</title>
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+$(window).on('hashchange', function() {
+
+    function handleHash() {
+        var url = document.location.hash.replace('#', '').split('/');
+        console.log(url);
+        var page = url[1];
+        var action = url[2];
+        switchPage(page);
+    }
+
+    function switchPage(page) {
+        $('section').hide();
+        $('#' + page).show();
+    }
+
+    handleHash();
+});
+</script>
+<body>
+<ul>
+    <li><a href="#/category/index">Category</a></li>
+    <li><a href="#/index">Index</a></li>
+</ul>
+<section id="category">
+    This is category
+</section>
+<section id="index">
+    This is index
+</section>
+</body>
+</html>
+
+
