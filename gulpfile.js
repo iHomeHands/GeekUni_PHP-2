@@ -4,6 +4,16 @@ var ftp = require( 'vinyl-ftp' );
 var config = require('./config.json');
 var phpcs = require('gulp-phpcs');
 
+var exec = require('child_process').exec;
+
+gulp.task('task', function (cb) {
+  exec('.\\vendor\\bin\\php-cs-fixer fix --rules=@PSR2 .\\', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+})
+
 gulp.task('default', function () {
     return gulp.src(['/**/*.php', '!/vendor/**/*.*'])
         // Validate files using PHP Code Sniffer
