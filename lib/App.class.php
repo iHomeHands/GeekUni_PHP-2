@@ -49,14 +49,16 @@ class App
 
             $view = $controller->view . '/' . $methodName . '.html';
             if (!isset($_GET['asAjax'])) {
-                require_once (Config::get('path_libs') . '/smarty/Autoloader.php');
-                Smarty_Autoloader::register();
+                //require_once (Config::get('path_libs') . '/smarty/Autoloader.php');
+                //Smarty_Autoloader::register();
                 $smarty = new Smarty();
+
                 $smarty->setTemplateDir(Config::get('path_templates'));
                 $smarty->assign('title', $controller->title);
                 $smarty->assign('data', $data);
                 $smarty->assign('categories', CategoriesController::getCategories(0));
-                echo $smarty->fetch($view);
+                $smarty->display($view);
+                //echo $smarty->fetch($view);
             } else {
                 echo json_encode($data);
             }

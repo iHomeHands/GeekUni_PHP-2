@@ -9,5 +9,8 @@
             "email": "d946@mail.ru"
         }
     ],
-    "require": {}
+    "require": {
+        "raveren/kint": "^1.1",
+        "smarty/smarty": "^3.1"
+    }
 }
