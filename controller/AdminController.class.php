@@ -1,7 +1,6 @@
 <?php
 class AdminController extends Controller
 {
-    
     protected $controls = [
         'pages' => 'Page',
         'orders' => 'Order',
@@ -26,7 +25,6 @@ class AdminController extends Controller
                 $field = explode('_', $key, 2);
                 if ($field[0] == $actionId['id']) {
                     $fields[$field[1]] = $value;
-
                 }
             }
         }
@@ -40,7 +38,7 @@ class AdminController extends Controller
             }
         }
 
-        switch($actionId['action']) {
+        switch ($actionId['action']) {
             case 'create':
                 $query = 'INSERT INTO ' . $data['id'] . ' ';
                 $keys = [];

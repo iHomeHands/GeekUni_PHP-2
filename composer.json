@@ -1,7 +1,9 @@
 {
     "name": "ihomehands/geek-uni_php-2",
     "require-dev": {
-        "phpunit/phpunit": "^6.2"
+        "phpunit/phpunit": "^6.2",
+        "squizlabs/php_codesniffer": "^3.0",
+        "friendsofphp/php-cs-fixer": "^2.4"
     },
     "authors": [
         {
@@ -9,5 +11,8 @@
             "email": "d946@mail.ru"
         }
     ],
-    "require": {}
+    "require": {
+        "raveren/kint": "^1.1",
+        "smarty/smarty": "^3.1"
+    }
 }

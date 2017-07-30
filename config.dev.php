@@ -4,6 +4,7 @@ $config['db_password'] = '';
 $config['db_base'] = 'shop';
 $config['db_host'] = 'localhost';
 $config['db_charset'] = 'UTF-8';
+$config['server_url'] = 'localhost';
 
 $config['path_root'] = __DIR__;
 $config['path_public'] = $config['path_root'] . '/public';

@@ -1,0 +1,21 @@
+{include file='../header.html'}
+<h1>Товары в корзине:</h1>
+<table>
+    <th>
+       Название
+    </th>
+    <th>
+        Цена
+    </th>
+{foreach from=$data.goods item=good}
+<tr>
+    <td>
+        {$good.name}
+    </td>
+    <td>
+        {$good.price}
+    </td>
+</tr>
+{/foreach}
+</table>
+{include file='../footer.html'}

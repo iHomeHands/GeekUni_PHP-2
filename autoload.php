@@ -1,12 +1,12 @@
 <?php
 
-function __autoload($className)
+function autoload($className)
 {
     $dirs = [
         'controller',
         'data/migrate',
         'lib',
-        'lib/smarty',
+        //'lib/smarty',
         'lib/commands',
         'model/'
     ];
@@ -14,7 +14,6 @@ function __autoload($className)
     foreach ($dirs as $dir) {
         $fileName = __DIR__ . '/' . $dir . '/' . $className . '.class.php';
         if (is_file($fileName)) {
-
             require_once($fileName);
             $found = true;
         }
@@ -25,6 +24,7 @@ function __autoload($className)
     return true;
 }
 
-__autoload('Status');
-__autoload('OrderStatus');
-__autoload('CategoriesController');
+spl_autoload_register('autoload');
+//__autoload('Status');
+//__autoload('OrderStatus');
+//__autoload('CategoriesController');

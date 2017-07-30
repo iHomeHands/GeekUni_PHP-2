@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 require_once 'autoload.php';
 
-spl_autoload_register('__autoload');
-
 use PHPUnit\Framework\TestCase;
 
 class CommandsTest extends TestCase
@@ -25,7 +23,6 @@ class CommandsTest extends TestCase
 
     public function test_commandsAreReal()
     {
-
         $output = $this->getCommandOutput('php ./shop.php');
         $this->assertEquals(2, count($output)-1);
         $commandsFromOutput = [];
@@ -71,6 +68,4 @@ class CommandsTest extends TestCase
     {
         return db::getInstance()->select('SELECT COUNT(*) as c FROM pages')[0]['c'];
     }
-
-
 }

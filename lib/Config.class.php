@@ -21,9 +21,9 @@ class Config
             $configDefault = $configDir . 'config.default.php';
             if (is_file($configProd)) {
                 require_once $configProd;
-            } else if (is_file($configDev)) {
+            } elseif (is_file($configDev)) {
                 require_once $configDev;
-            } else if (is_file($configDefault)) {
+            } elseif (is_file($configDefault)) {
                 require_once $configDefault;
             } else {
                 throw new Exception('Unable to find configuration file');
@@ -36,4 +36,3 @@ class Config
         return self::$configCache;
     }
 }
-?>

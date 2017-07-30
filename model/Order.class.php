@@ -1,6 +1,7 @@
 <?php
 
-class Order extends Model {
+class Order extends Model
+{
     protected static $table = 'orders';
 
     protected static function setProperties()
@@ -17,6 +18,11 @@ class Order extends Model {
 
         self::$properties['email'] = [
             'type' => 'float'
+        ];
+
+        self::$properties['user_session'] = [
+            'type' => 'varchar',
+            'size' => 64
         ];
     }
 }

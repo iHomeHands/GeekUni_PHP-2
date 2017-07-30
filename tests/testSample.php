@@ -8,7 +8,8 @@ class testSample extends PHPUnit_Framework_TestCase
         $this->assertTrue($a);
     }
 
-    protected function getNumber($a) {
+    protected function getNumber($a)
+    {
         if ($a < 0) {
             $a *= -1;
         }

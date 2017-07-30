@@ -11,7 +11,7 @@ class cleantables extends Command
             if (empty($arguments)) {
                 $this->doClean($table['Tables_in_shop']);
             } else {
-                if($arguments[0] == $table['Tables_in_shop']) {
+                if ($arguments[0] == $table['Tables_in_shop']) {
                     $this->doClean($table['Tables_in_shop']);
                     return true;
                 }
@@ -26,7 +26,4 @@ class cleantables extends Command
         Logger::write('Cleaning table ' . $table, true);
         db::getInstance()->query('TRUNCATE TABLE ' . $table);
     }
-
-
-
 }

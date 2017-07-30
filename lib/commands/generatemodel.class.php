@@ -13,4 +13,3 @@ class generatemodel extends Command
         return $arguments[0]::generate();
     }
 }
-?>

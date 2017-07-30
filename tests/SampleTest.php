@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
 
-
 class sampleTest extends TestCase
 {
     public function test_firstTest()

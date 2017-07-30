@@ -19,7 +19,6 @@ class testSample extends PHPUnit_Framework_TestCase
 
     public function test_commandsAreReal()
     {
-
         $output = $this->getCommandOutput('php ./shop.php');
         $this->assertEquals(2, count($output)-1);
         $commandsFromOutput = [];
@@ -65,6 +64,4 @@ class testSample extends PHPUnit_Framework_TestCase
     {
         return db::getInstance()->select('SELECT COUNT(*) as c FROM pages')[0]['c'];
     }
-
-
 }
