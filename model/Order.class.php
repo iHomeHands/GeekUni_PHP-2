@@ -18,5 +18,10 @@ class Order extends Model {
         self::$properties['email'] = [
             'type' => 'float'
         ];
+
+        self::$properties['user_session'] = [
+            'type' => 'varchar',
+            'size' => 64
+        ];
     }
 }
