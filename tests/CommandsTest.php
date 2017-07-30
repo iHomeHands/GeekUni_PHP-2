@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 require_once 'autoload.php';
 
-spl_autoload_register('__autoload');
-
 use PHPUnit\Framework\TestCase;
 
 class CommandsTest extends TestCase

@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
+require_once 'autoload.php';
+
 use PHPUnit\Framework\TestCase;
 
 class webAppTest extends TestCase
 {
     public function test_testWebApp()
     {
-        $content = file_get_contents('http://localhost/index.php?url=123');
-        $this->assertEquals('123', $content);
+        $content = file_get_contents('http://'.Config::get('server_url').'/index.php?page=admin');
+        $this->assertTrue(strpos($content, '<!DOCTYPE html>') === 0);
     }
 }
