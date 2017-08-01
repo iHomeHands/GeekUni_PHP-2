@@ -10,6 +10,11 @@ $ composer install
 
 Available commands:
 
+```sh
+$ php shop.php cleantables
+```
+
+
  * cleantables : Clean all tables
  * fixture : Here we will add some fixtures
  * generatemodel : Generate table for model
