@@ -1,17 +1,19 @@
 # GeekUni_PHP-2
 
-При развертывание на сервере:
+### Установка
 
-export IM_DB_USER=root
+```sh
+$ composer install
+```
 
-export IM_DB_PASS=
+### Для разработки
 
-export IM_DB_BASE=shop
+```sh
+$ .\vendor\bin\php-cs-fixer fix --rules=@PSR2 .\
+```
 
-export IM_DB_HOST=localhost
+### Выгрузка на сервер
 
-export IM_SERVER_URL=localhost
-
-.\vendor\bin\php-cs-fixer fix --rules=@PSR2 .\
-
-gulp deploy
+```sh
+$ gulp deploy
+```
