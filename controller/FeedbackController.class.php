@@ -13,10 +13,10 @@ class FeedbackController extends Controller
             return $return;
         } else {
             $requiredFields = ['phone', 'email', 'name', 'message'];
-            if (json_decode($data['data']) === null) {
-                $data = json_encode($data['data']);
+            if (@json_decode($data['data']) === null) {
+                $data = @json_encode($data['data']);
             }
-            $data = json_decode($data);
+            $data = @json_decode($data);
 
             foreach ($requiredFields as $field) {
                 if (!isset($data->$field) || empty($data->$field)) {
