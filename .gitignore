@@ -5,3 +5,5 @@ public/templates_c
 tests/_output/*
 /vendor/
 /node_modules/
+*.php_cs.cache
+config.json
