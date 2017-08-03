@@ -53,6 +53,7 @@ gulp.task( 'deploy', function () {
 		'lib/**',
 		'logs/**',
 		'model/**',
+        'views/**',
 		'templates/**',
 		'tests/**',
 		//'vendor/**'
