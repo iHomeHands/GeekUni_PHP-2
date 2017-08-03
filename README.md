@@ -38,6 +38,7 @@ $ .\vendor\bin\php-cs-fixer fix --rules=@PSR2 .\
 
 ```sh
 $ .\vendor\bin\phpunit --testdox tests
+$ .\vendor\bin\codecept run --steps
 ```
 
 ### Выгрузка на сервер
