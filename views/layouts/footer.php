@@ -1,5 +1,5 @@
 <footer>
-    Footer
+    Copyright
 </footer>
 </body>
 </html>

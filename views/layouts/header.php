@@ -9,5 +9,9 @@
 </head>
 <body>
 <header>
-    Header
+    <a href="/">Home</a>
+    <a href="/contact">Contact</a>
+    <a href="/about">About</a>
+    <a href="/user/login">Login</a>
+    <a href="/user/register">Register</a>
 </header>
