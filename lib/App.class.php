@@ -40,7 +40,6 @@ class App
     {
         // Получаем строку запроса
         $uri = $this->getURI();
-
         // Проверяем наличие такого запроса в массиве маршрутов (routes.php)
         foreach ($this->routes as $uriPattern => $path) {
 
@@ -48,15 +47,13 @@ class App
             if (preg_match("~$uriPattern~", $uri)) {
 
                 // Получаем внутренний путь из внешнего согласно правилу.
-                $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
-
+                $internalRoute = preg_replace("~{$uriPattern}~", $path, $uri);
                 // Определить контроллер, action, параметры
 
                 $segments = explode('/', $internalRoute);
 
                 $controllerName = array_shift($segments) . 'Controller';
                 $controllerName = ucfirst($controllerName);
-
                 $actionName = 'action' . ucfirst(array_shift($segments));
 
                 $parameters = $segments;

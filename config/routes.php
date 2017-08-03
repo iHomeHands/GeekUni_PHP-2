@@ -1,8 +1,8 @@
 <?php
 
 return array(
-    '' => 'admin/index',
     // Админпанель:
-    'admin' => 'admin/index',
-    'admin/test' => 'admin/index'
+    'admin' => 'test2/index',
+    //'admin/test' => 'test/index'
+    '' => 'test/index'
 );
