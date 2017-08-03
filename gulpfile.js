@@ -48,6 +48,7 @@ gulp.task( 'deploy', function () {
 	var globs = [
 		'public/**',
 		'controller/**',
+        'config/**',
 		'data/**',
 		'lib/**',
 		'logs/**',
