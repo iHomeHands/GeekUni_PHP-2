@@ -61,7 +61,7 @@ gulp.task( 'deploy', function () {
 		'fonts/**',
 		'*.json',
 		'*.php',
-		'!config*'
+		'!config/config.prod*'
 	];
 
 	// using base = '.' will transfer everything to /public_html correctly
