@@ -6,7 +6,7 @@ $config['db_host'] = 'localhost';
 $config['db_charset'] = 'UTF-8';
 $config['server_url'] = 'localhost';
 
-$config['path_root'] = __DIR__;
+$config['path_root'] = __DIR__.'/..';
 $config['path_public'] = $config['path_root'] . '/public';
 $config['path_model'] = $config['path_root'] . '/model';
 $config['path_controller'] = $config['path_root'] . '/controller';
