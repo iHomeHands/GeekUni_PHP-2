@@ -48,6 +48,7 @@ gulp.task( 'deploy', function () {
 	var globs = [
 		'public/**',
 		'controller/**',
+        'config/**',
 		'data/**',
 		'lib/**',
 		'logs/**',
@@ -60,7 +61,7 @@ gulp.task( 'deploy', function () {
 		'fonts/**',
 		'*.json',
 		'*.php',
-		'!config*'
+		'!config/config.prod*'
 	];
 
 	// using base = '.' will transfer everything to /public_html correctly

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-require_once 'autoload.php';
+require_once  __DIR__ . '/../lib/autoload.php';
 
 require_once 'APIRequest.php';
 
@@ -12,8 +12,6 @@ class testSample extends TestCase
     public function test_feedbackFormNoData()
     {
         $errorResponse = '{"status":"error","message":"Please, fill required fields"}';
-        var_dump(APIRequest('api/feedback', [], 'POST'));
-        die;
         $this->assertEquals($errorResponse, APIRequest('/api/feedback', [], 'POST'));
     }
 

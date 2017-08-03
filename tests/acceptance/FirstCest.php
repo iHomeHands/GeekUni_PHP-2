@@ -15,6 +15,6 @@ class FirstCest
     public function tryToTest(AcceptanceTester $I)
     {
         $I->amOnPage('/');
-        $I->see('Home');  
+        $I->see('Home');
     }
 }

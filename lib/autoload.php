@@ -8,13 +8,17 @@ function autoload($className)
         'lib',
         //'lib/smarty',
         'lib/commands',
-        'model/'
+        'model'
     ];
     $found = false;
     foreach ($dirs as $dir) {
-        $fileName = __DIR__ . '/' . $dir . '/' . $className . '.class.php';
-        if (is_file($fileName)) {
-            require_once($fileName);
+        $fileNameU = __DIR__ . '/../' . $dir . '/' . ucfirst($className) . '.class.php';
+        $fileNameL = __DIR__ . '/../' . $dir . '/' . lcfirst($className) . '.class.php';
+        if (is_file($fileNameU)) {
+            require_once($fileNameU);
+            $found = true;
+        } elseif (is_file($fileNameL)) {
+            require_once($fileNameL);
             $found = true;
         }
     }
@@ -25,6 +29,3 @@ function autoload($className)
 }
 
 spl_autoload_register('autoload');
-//__autoload('Status');
-//__autoload('OrderStatus');
-//__autoload('CategoriesController');
