@@ -15,7 +15,7 @@ class Config
     private static function getCurrentConfiguration()
     {
         if (empty(self::$configCache)) {
-            $configDir = __DIR__ . '/../';
+            $configDir = __DIR__ . '/../config/';
             $configProd = $configDir . 'config.prod.php';
             $configDev = $configDir . 'config.dev.php';
             $configDefault = $configDir . 'config.default.php';
