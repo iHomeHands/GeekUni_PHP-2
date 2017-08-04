@@ -2,11 +2,6 @@
 
 class App
 {
-
-    /**
-     * Свойство для хранения массива роутов
-     * @var array
-     */
     private $routes=[];
 
     public function Init()
@@ -24,9 +19,6 @@ class App
         }
     }
 
-    /**
-     * Возвращает строку запроса
-     */
     private function getURI()
     {
         if (!empty($_SERVER['REQUEST_URI'])) {
@@ -34,22 +26,13 @@ class App
         }
     }
 
-    /**
-     * Метод для обработки запроса
-     */
     public function run()
     {
-        // Получаем строку запроса
         $uri = $this->getURI();
-        // Проверяем наличие такого запроса в массиве маршрутов (routes.php)
+
         foreach ($this->routes as $uriPattern => $path) {
-
-            // Сравниваем $uriPattern и $uri
             if (preg_match("~$uriPattern~", $uri)) {
-
-                // Получаем внутренний путь из внешнего согласно правилу.
                 $internalRoute = preg_replace("~{$uriPattern}~", $path, $uri);
-                // Определить контроллер, action, параметры
 
                 $segments = explode('/', $internalRoute);
 
@@ -59,27 +42,17 @@ class App
 
                 $parameters = $segments;
 
-                // Подключить файл класса-контроллера
                 $controllerFile = Config::get('path_root') . '/controllers/' .
                     $controllerName . '.php';
 
-                //if (file_exists($controllerFile)) {
-                //    include_once($controllerFile);
-                //}
-
-                // Создать объект, вызвать метод (т.е. action)
                 $controllerObject = new $controllerName;
                 if (method_exists($controllerObject, $actionName)) {
-                    /* Вызываем необходимый метод ($actionName) у определенного
-                     * класса ($controllerObject) с заданными ($parameters) параметрами
-                     */
                     $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
                 } else {
                     // ToDo: 404
                     $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
                 }
 
-                // Если метод контроллера успешно вызван, завершаем работу роутера
                 if ($result != null) {
                     break;
                 }
@@ -124,8 +97,6 @@ class App
 
             $view = $controller->view . '/' . $methodName . '.html';
             if (!isset($_GET['asAjax'])) {
-                //require_once (Config::get('path_libs') . '/smarty/Autoloader.php');
-                //Smarty_Autoloader::register();
                 $smarty = new Smarty();
 
                 $smarty->setTemplateDir(Config::get('path_templates'));
@@ -133,7 +104,6 @@ class App
                 $smarty->assign('data', $data);
                 $smarty->assign('categories', CategoriesController::getCategories(0));
                 $smarty->display($view);
-                //echo $smarty->fetch($view);
             } else {
                 echo json_encode($data);
             }
