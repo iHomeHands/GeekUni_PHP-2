@@ -22,6 +22,8 @@
                         <form action="#" method="post">
                             <p>Имя:</p>
                             <input type="text" name="name" placeholder="Имя" value="<?php echo $name; ?>"/>
+                            <p>E-mail:</p>
+                            <input type="email" name="email" placeholder="e-mail" value="<?php echo $email; ?>"/>
 
                             <p>Пароль:</p>
                             <input type="password" name="password" placeholder="Пароль" value="<?php echo $password; ?>"/>
