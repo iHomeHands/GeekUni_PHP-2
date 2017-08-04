@@ -5,7 +5,7 @@ class SiteController
     public function actionIndex()
     {
         require_once(Config::get('path_views') . '/site/index.php');
-        return true;
+        return true ;
     }
 
     public function actionAbout()
