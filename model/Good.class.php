@@ -90,6 +90,12 @@ class Good extends Model
     public static function getAvailabilityText($availability)
     {
         switch ($availability) {
+            case '3':
+                return 'Архив';
+                break;
+            case '2':
+                return 'Закончилось';
+                break;
             case '1':
                 return 'В наличии';
                 break;
