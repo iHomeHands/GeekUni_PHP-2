@@ -38,7 +38,7 @@
                             </tr>
                             <?php foreach ($products as $product): ?>
                                 <tr>
-                                    <td><?php echo $product['code'];?></td>
+                                    <td><?php echo '---';/*$product['code'];*/?></td>
                                     <td>
                                         <a href="/product/<?php echo $product['id'];?>">
                                             <?php echo $product['name'];?>

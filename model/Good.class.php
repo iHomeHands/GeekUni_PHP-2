@@ -53,6 +53,39 @@ class Good extends Model
         )[0];
     }
 
+    public static function getProductsListByCategory($categoryId, $page = 1)
+    {
+        $limit = self::SHOW_BY_DEFAULT;
+
+        $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
+
+        return db::getInstance()->Select(
+            'SELECT id, name, price FROM '.self::$table
+            . ' WHERE  status = 1 AND category = '.(int)$categoryId
+            . ' ORDER BY id ASC LIMIT '.(int)$limit.' OFFSET '.(int)$offset,
+            []
+        );
+    }
+
+
+    public static function getTotalProductsInCategory($categoryId)
+    {
+        return db::getInstance()->Select(
+            'SELECT count(id) AS count FROM '.self::$table. ' WHERE status = "1" AND category = '.(int)$categoryId,
+            []
+        )[0]['count'];
+    }
+
+    public static function getProdustsByIds($idsArray)
+    {
+        $idsString = implode(',', $idsArray);
+
+        return db::getInstance()->Select(
+            'SELECT * FROM '.self::$table. ' WHERE status= "1" AND id IN ('.$idsString.')',
+            []
+        );
+    }
+
     public static function createProduct($options)
     {
         return db::getInstance()->Query(
