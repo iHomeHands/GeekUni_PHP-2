@@ -20,7 +20,7 @@ class Category extends Model
     {
         return db::getInstance()->Select(
             'SELECT id, name FROM '.self::$table.' WHERE status=:status AND parent_id = :parent_id',
-            ['status' => Status::Active, 'parent_id' => $parentId]
+            ['status' => 1, 'parent_id' => $parentId]
         );
     }
 
