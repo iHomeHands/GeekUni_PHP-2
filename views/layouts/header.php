@@ -34,10 +34,10 @@
                                     <li><a href="/cart/">Корзина</a></li>
                                 </ul>
                             </li> -->
+                            <li><a href="/catalog/">Каталог товаров</a></li>
+                            <li><a href="/cart/">Корзина</a></li>
                             <li><a href="/about/">О магазине</a></li>
                             <li><a href="/contacts/">Контакты</a></li>
-                            <li><a href="/product/1">Good # 1</a></li>
-                            <li><a href="/product/2">Good # 2</a></li>
                             <li><a href="/admin">Admin</a></li>
                             <li><a href="/user/login">Login</a></li>
                             <li><a href="/user/register">Register</a><li></li>
