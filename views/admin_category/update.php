@@ -14,7 +14,6 @@
                 </ol>
             </div>
 
-
             <h4>Редактировать категорию "<?php echo $category['name']; ?>"</h4>
 
             <br/>
@@ -27,7 +26,7 @@
                         <input type="text" name="name" placeholder="" value="<?php echo $category['name']; ?>">
 
                         <p>Порядковый номер</p>
-                        <input type="text" name="sort_order" placeholder="" value="<?php echo $category['sort_order']; ?>">
+                        <input type="text" name="sort_order" placeholder="" value="<?php echo "---";/*$category['sort_order'];*/ ?>">
 
                         <p>Статус</p>
                         <select name="status">
@@ -48,6 +47,5 @@
         </div>
     </div>
 </section>
-
 
 <?php include Config::get('path_views') . '/layouts/footer.php'; ?>
