@@ -4,7 +4,7 @@ class CartController
 {
     public function actionIndex()
     {
-        $categories = [];//Category::getCategoriesList();
+        $categories = Category::getCategoriesList();
 
         $productsInCart = [];//Cart::getProducts();
 
