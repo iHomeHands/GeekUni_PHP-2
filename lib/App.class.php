@@ -62,17 +62,21 @@ class App
                 $controllerFile = Config::get('path_root') . '/controllers/' .
                     $controllerName . '.php';
 
-                if (file_exists($controllerFile)) {
-                    include_once($controllerFile);
-                }
+                //if (file_exists($controllerFile)) {
+                //    include_once($controllerFile);
+                //}
 
                 // Создать объект, вызвать метод (т.е. action)
                 $controllerObject = new $controllerName;
-
-                /* Вызываем необходимый метод ($actionName) у определенного
-                 * класса ($controllerObject) с заданными ($parameters) параметрами
-                 */
-                $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
+                if (method_exists($controllerObject, $actionName)) {
+                    /* Вызываем необходимый метод ($actionName) у определенного
+                     * класса ($controllerObject) с заданными ($parameters) параметрами
+                     */
+                    $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
+                } else {
+                    // ToDo: 404
+                    $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
+                }
 
                 // Если метод контроллера успешно вызван, завершаем работу роутера
                 if ($result != null) {
