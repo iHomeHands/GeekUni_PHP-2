@@ -30,11 +30,15 @@ return array(
     'admin/order/view/([0-9]+)' => 'adminOrder/view/$1',
     'admin/order' => 'adminOrder/index',
 
+    'admin/user' => 'adminUser/index',
+
     'admin' => 'admin/index',
     // User
     'user/register' => 'user/register',
     'user/login' => 'user/login',
     'user/logout' => 'user/logout',
+    'cabinet/edit' => 'cabinet/edit',
+    'cabinet' => 'cabinet/index',
     // Site
     'about' => 'site/about',
     'contacts' => 'site/contact',
