@@ -24,7 +24,7 @@ class CatalogController
         $total = Good::getTotalProductsInCategory($categoryId);
 
         // Создаем объект Pagination - постраничная навигация
-        $pagination = '';//new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
+        $pagination = new Pagination($total, $page, Good::SHOW_BY_DEFAULT, 'page-');
 
         // Подключаем вид
         require_once(Config::get('path_views') . '/catalog/category.php');
