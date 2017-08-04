@@ -4,6 +4,9 @@ class Good extends Model
 {
     protected static $table = 'goods';
 
+    // Количество отображаемых товаров по умолчанию
+    const SHOW_BY_DEFAULT = 6;
+
     protected static function setProperties()
     {
         self::$properties['name'] = [
@@ -22,6 +25,16 @@ class Good extends Model
         self::$properties['category'] = [
             'type' => 'int'
         ];
+    }
+
+    public static function getLatestProducts($count = self::SHOW_BY_DEFAULT)
+    {
+        return db::getInstance()->Select(
+            'SELECT id, name, price FROM ' .self::$table
+            . ' WHERE status = "1" ORDER BY id DESC'
+            . ' LIMIT '.(int)($count),
+            []
+        );
     }
 
     public static function getProductsList()

@@ -24,6 +24,14 @@ class Category extends Model
         );
     }
 
+    public static function getCategoriesList()
+    {
+        return db::getInstance()->Select(
+            'SELECT id, name FROM '.self::$table.' WHERE status = "1" ORDER BY name ASC',
+            []
+        );
+    }
+
     public static function getCategoriesListAdmin()
     {
         return db::getInstance()->Select(
@@ -40,21 +48,21 @@ class Category extends Model
         )[0];
     }
 
-    public static function updateCategoryById($id, $name, $sortOrder, $status)
-    {
-        return db::getInstance()->Query(
-            'UPDATE '.self::$table. ' SET name = :name,'. /*, sort_order = :sort_order*/
-                'status = :status WHERE id = :id',
-            ['id'=>$id, 'name' => $name, 'status' => $status ]
-        );
-    }
-
     public static function createCategory($name, $sortOrder, $status)
     {
         return db::getInstance()->Query(
             'INSERT INTO '.self::$table.' (name, status, parent_id ) '
                 . 'VALUES (:name, :status, :parent_id)',
             ['name' => $name, 'status' => $status, 'parent_id' => 0]
+        );
+    }
+
+    public static function updateCategoryById($id, $name, $sortOrder, $status)
+    {
+        return db::getInstance()->Query(
+            'UPDATE '.self::$table. ' SET name = :name,'. /*, sort_order = :sort_order*/
+                'status = :status WHERE id = :id',
+            ['id'=>$id, 'name' => $name, 'status' => $status ]
         );
     }
 
