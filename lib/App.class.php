@@ -11,6 +11,7 @@ class App
 
     public function Init()
     {
+        session_start();
         date_default_timezone_set('Europe/Moscow');
         db::getInstance()->Connect(Config::get('db_user'), Config::get('db_password'), Config::get('db_base'));
 
