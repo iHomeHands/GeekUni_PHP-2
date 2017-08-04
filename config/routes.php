@@ -1,8 +1,13 @@
 <?php
 
 return array(
-    // Админпанель:
-    'admin' => 'test2/index',
+    // Product
+    'product/([0-9]+)' => 'product/view/$1',
+    // Admin
+    'admin/product' => 'adminProduct/index',
+    'admin/category' => 'adminCategory/index',
+    'admin/order' => 'adminOrder/index',
+    'admin' => 'admin/index',
     // User
     'user/register' => 'user/register',
     'user/login' => 'user/login',

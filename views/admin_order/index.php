@@ -1,7 +1,7 @@
 <?php include Config::get('path_views') . '/layouts/header.php'; ?>
 
 <section>
-    User :: login
+    AdminOrder :: Index
 </section>
 
 <?php include Config::get('path_views') . '/layouts/footer.php'; ?>

@@ -12,6 +12,9 @@
     <a href="/">Home</a>
     <a href="/contact">Contact</a>
     <a href="/about">About</a>
+    <a href="/product/1">Good # 1</a>
+    <a href="/product/2">Good # 2</a>
+    <a href="/admin">Admin</a>
     <a href="/user/login">Login</a>
     <a href="/user/register">Register</a>
 </header>
