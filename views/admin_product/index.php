@@ -31,7 +31,7 @@
                 <?php foreach ($productsList as $product): ?>
                     <tr>
                         <td><?php echo $product['id']; ?></td>
-                        <td><?php echo $product['code']; ?></td>
+                        <td><?php echo '---';/*$product['code'];*/ ?></td>
                         <td><?php echo $product['name']; ?></td>
                         <td><?php echo $product['price']; ?></td>
                         <td><a href="/admin/product/update/<?php echo $product['id']; ?>" title="Редактировать"><i class="fa fa-pencil-square-o"></i></a></td>
