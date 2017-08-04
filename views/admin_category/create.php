@@ -3,7 +3,7 @@
 <section>
     <div class="container">
         <div class="row">
-            Site :: Index
+            AdminCategory :: Create
         </div>
     </div>
 </section>
