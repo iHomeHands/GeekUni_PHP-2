@@ -31,4 +31,11 @@ class CartController
         echo Cart::addProduct($id);
         return true;
     }
+
+    public function actionDelete($id)
+    {
+        Cart::deleteProduct($id);
+
+        header("Location: /cart");
+    }
 }
