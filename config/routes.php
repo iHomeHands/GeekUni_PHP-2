@@ -31,6 +31,9 @@ return array(
     'admin/order' => 'adminOrder/index',
 
     'admin/user' => 'adminUser/index',
+    'admin/user/update/([0-9]+)' => 'adminUser/update/$1',
+    'admin/user/delete/([0-9]+)' => 'adminUser/delete/$1',
+    'admin/user/view/([0-9]+)' => 'adminUserr/view/$1',
 
     'admin' => 'admin/index',
     // User
