@@ -4,7 +4,6 @@ class Good extends Model
 {
     protected static $table = 'goods';
 
-    // Количество отображаемых товаров по умолчанию
     const SHOW_BY_DEFAULT = 6;
 
     protected static function setProperties()
@@ -66,7 +65,6 @@ class Good extends Model
             []
         );
     }
-
 
     public static function getTotalProductsInCategory($categoryId)
     {

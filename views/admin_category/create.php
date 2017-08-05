@@ -3,9 +3,7 @@
 <section>
     <div class="container">
         <div class="row">
-
             <br/>
-
             <div class="breadcrumbs">
                 <ol class="breadcrumb">
                     <li><a href="/admin">Админпанель</a></li>
@@ -13,10 +11,7 @@
                     <li class="active">Добавить категорию</li>
                 </ol>
             </div>
-
-
             <h4>Добавить новую категорию</h4>
-
             <br/>
 
             <?php if (isset($errors) && is_array($errors)): ?>
@@ -49,8 +44,6 @@
                     </form>
                 </div>
             </div>
-
-
         </div>
     </div>
 </section>

@@ -60,7 +60,7 @@ class Category extends Model
     public static function updateCategoryById($id, $name, $sortOrder, $status)
     {
         return db::getInstance()->Query(
-            'UPDATE '.self::$table. ' SET name = :name,'. /*, sort_order = :sort_order*/
+            'UPDATE '.self::$table. ' SET name = :name,'.
                 'status = :status WHERE id = :id',
             ['id'=>$id, 'name' => $name, 'status' => $status ]
         );

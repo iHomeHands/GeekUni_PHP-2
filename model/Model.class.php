@@ -34,9 +34,6 @@ abstract class Model
         }
     }
 
-    /**
-     * Вызывается в конструкторе и при генерации, чтобы дополнить базовый набор свойств
-     */
     protected static function setProperties()
     {
         return true;
@@ -82,10 +79,8 @@ abstract class Model
         switch (static::$property['type']) {
             case 'int':
                 return (int)$this->$name;
-                // break;
             default:
                 return (string)$this->$name;
-                // break;
         }
     }
 

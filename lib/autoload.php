@@ -6,7 +6,6 @@ function autoload($className)
         'controller',
         'data/migrate',
         'lib',
-        //'lib/smarty',
         'lib/commands',
         'model'
     ];

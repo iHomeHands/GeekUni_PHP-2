@@ -46,7 +46,6 @@ class User extends Model
             ['email'=>$email, 'password'=> $password]
         );
         if (count($user)>0) {
-            // Если запись существует, возвращаем id пользователя
             return $user[0]['id'];
         }
         return false;
